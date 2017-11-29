@@ -19,10 +19,10 @@ class App extends React.Component {
             <div style={{height: 500, textAlign: 'center', paddingTop: 200}}>Hello Tabs!</div>
           </TabPane>
           <TabPane order={TAB_KEY.SECONDE.KEY} tab={TAB_KEY.SECONDE.TITLE}>
-            test
+            Test!
           </TabPane>
           <TabPane order={TAB_KEY.THIRD.KEY} tab={TAB_KEY.THIRD.TITLE}>
-            haha
+            Haha!
           </TabPane>
         </Tabs>
       </div>
