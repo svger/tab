@@ -1,5 +1,5 @@
 # Tabs
-选项卡切换组件
+> 选项卡切换组件
 
 ## API
 
@@ -9,7 +9,7 @@
 | :---------: | :----------------: | :---------: | :----: |
 | activeKey | 当前激活`tab`面板的`key` | string    | 无 |
 | defaulActiveKey | 初始化激活`tab`面板的`key` | string    | 无 |
-| onChange | 切换面板的回调 | function    | 无 |
+| onChange | 切换面板的回调 | function    | () => {} |
 | prefixCls | 样式前缀，如：`cefc-tabs`，可用于自定义样式 | string   | `cefc-tabs` |
 | children  | 子元素 | React.Element | 无 |
 
