@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
-import styles from '../style/TabPane.less';
+import styles from '../style/TabPanel.less';
 
 const defaultPrefixCls = 'cefc-tabs';
 
-class TabPane extends Component {
+class TabPanel extends Component {
   
     render() {
       const { prefixCls, isActive } = this.props;
@@ -22,15 +22,15 @@ class TabPane extends Component {
     }
   }
   
-  TabPane.defaultProps = {
+  TabPanel.defaultProps = {
     prefixCls: defaultPrefixCls  
   };
   
-  TabPane.PropTypes = {
+  TabPanel.PropTypes = {
     order: PropTypes.string,
     tab: PropTypes.string,
     isActive: PropTypes.bool,
     prefixCls: PropTypes.string.isRequired,  
   }
 
-  export default TabPane;
+  export default TabPanel;

@@ -48,13 +48,13 @@ class Tabs extends Component {
     return (
       <div className={`${prefixCls}-tabs`}>
         <TabNav
-          panes={children}
+          panels={children}
           activeKey={activeKey}
           prefixCls={prefixCls}
           handleTabClicked={this.handleTabClicked}
         />
         <TabContent
-          panes={children}
+          panels={children}
           activeKey={activeKey}
           prefixCls={prefixCls}
         />
@@ -77,7 +77,7 @@ Tabs.propTypes = {
 };
 
 // Tab Nav
-function TabNav({ activeKey, handleTabClicked, prefixCls, panes }) {
+function TabNav({ activeKey, handleTabClicked, prefixCls, panels }) {
   const handleClick = (key) => {
     return () => {
       handleTabClicked(key);
@@ -87,12 +87,12 @@ function TabNav({ activeKey, handleTabClicked, prefixCls, panes }) {
   return (
     <ul className={`${prefixCls}-nav`}>
       {
-        panes.map((pane) => {
-          if (!pane) {
+        panels.map((panel) => {
+          if (!panel) {
             return ;
           }
 
-          const { order, tab } = pane.props;
+          const { order, tab } = panel.props;
           const navItemStyle = cns({
             [`${prefixCls}-item`]: true,
             [`${prefixCls}-item--active`]: activeKey === order
@@ -121,26 +121,26 @@ TabNav.propTypes = {
   activeKey: PropTypes.string,
   handleTabClicked: PropTypes.func,
   prefixCls: PropTypes.string.isRequired,  
-  panes: PropTypes.node.isRequired
+  panels: PropTypes.node.isRequired
 }
 
 
 // Tab Content
-function TabContent({ activeKey, prefixCls, panes }) {
+function TabContent({ activeKey, prefixCls, panels }) {
 
   return (
     <div>
       {
-        panes.map((pane) => {
-          if (!pane) {
+        panels.map((panel) => {
+          if (!panel) {
             return ;
           }
           
-          const isActive = activeKey === pane.props.order;
-          return React.cloneElement(pane, {
+          const isActive = activeKey === panel.props.order;
+          return React.cloneElement(panel, {
             isActive,
             prefixCls,
-            key: pane.props.order
+            key: panel.props.order
           })
         })
       }
@@ -155,7 +155,7 @@ TabContent.defaultProps = {
 TabContent.propTypes = {
   activeKey: PropTypes.string,
   prefixCls: PropTypes.string.isRequired,  
-  panes: PropTypes.node.isRequired
+  panels: PropTypes.node.isRequired
 };
 
 export default Tabs;
